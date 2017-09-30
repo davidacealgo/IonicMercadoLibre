@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      MercadoSearch Reizzel
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item>
+  <ion-label floating>Producto</ion-label>
+  <ion-input type="text" [(ngModel)]="product"></ion-input>
+</ion-item>
+
+  <button ion-button block (click)="myFunction()">Buscar Producto</button>
+
+<ion-card *ngFor="let i of informationProd.results">
+  <ion-card-content>
+    <ion-card-title>
+
+      Nombre del producto: {{ i.title }}
+    </ion-card-title>
+      <ion-card-title>
+
+          Precio: {{ i.price}}
+
+        </ion-card-title>
+        <ion-card-title>
+
+
+          Cantidad vendidos: {{i.sold_quantity}}
+
+        </ion-card-title>
+        <ion-card-title>
+
+          <img src = "{{ i.thumbnail }}">
+        </ion-card-title>
+
+
+  </ion-card-content>
+</ion-card>
+
+
+</ion-content>
